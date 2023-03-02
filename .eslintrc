@@ -1,0 +1,29 @@
+{
+	"parser": "@typescript-eslint/parser",
+	"plugins": ["solid", "import"],
+	"extends": ["eslint:recommended", "plugin:solid/typescript"],
+	"ignorePatterns": ["*.cjs"],
+	"parserOptions": {
+		"sourceType": "module",
+		"ecmaVersion": 2020
+	},
+	"env": {
+		"browser": true,
+		"es2017": true,
+		"node": true
+	},
+	"rules": {
+		"no-unused-vars": [2, { "args": "all", "argsIgnorePattern": "^_" }],
+		"import/order": [
+			2,
+			{
+				"newlines-between": "always",
+				"groups": ["builtin", "external", "parent", "sibling", "index", "type"],
+				"alphabetize": {
+					"order": "asc",
+					"caseInsensitive": false
+				}
+			}
+		]
+	}
+}
